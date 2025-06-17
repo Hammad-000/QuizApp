@@ -1,0 +1,26 @@
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+form{
+   
+    display: flex;
+    flex-direction: column;
+    padding: 60px 60px;
+    gap: 50px;
+}
+
+button{
+    width: 200px;
+}
+.theme{padding: 8px;
+border-radius: 8px;}
+.mb-3{
+    
+    padding: 10px;
+    border: 1px solid rgb(142, 3, 126);
+    border-radius: 10px;
+}
