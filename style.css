@@ -13,14 +13,50 @@ form{
     gap: 50px;
 }
 
-button{
-    width: 200px;
+.btn{
+     border: 1px solid rgb(145, 142, 144);
+        background-color: #a9a6a6;
+    width: 140px;
+    color: white;
+}
+
+.btn:hover{  
+  background-color: rgb(146, 149, 149);
+
+
 }
 .theme{padding: 8px;
 border-radius: 8px;}
 .mb-3{
     
     padding: 10px;
-    border: 1px solid rgb(142, 3, 126);
+    border: 1px solid rgb(145, 142, 144);
     border-radius: 10px;
+}
+
+
+p{
+    position: relative;
+    font-size: 16px;
+}
+
+
+label:hover{
+
+    background-color: hwb(0 27% 73% / 0.721);
+}
+
+
+
+
+label{
+    
+    background-color: #a9a6a6;
+    transition: 0.4s;
+    cursor: pointer;
+    gap: 10px;
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+
 }

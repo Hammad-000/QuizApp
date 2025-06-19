@@ -6,6 +6,8 @@ const correctAnswer =  ["a" ,"b" ,"b" ,"c" ,"a"];
 const form =  document.querySelector("form");
 const resultDisplay = document.getElementById("score");
 const resultShow = document.getElementById("show");
+const  body = document.querySelector("body");
+
 
 
 
@@ -28,16 +30,22 @@ form.addEventListener("submit", function (e) {
   resultShow.style.display = "block";
   resultDisplay.textContent = score;
 
+
+   window.scrollTo({ top: 0, behavior: "smooth" });
+
 });
+
+
 
 function theme() {
   const body = document.body;
 
-  if (body.style.backgroundColor === "gray") {
+  if (body.style.backgroundColor === "black") {
     body.style.backgroundColor = "white";
     body.style.color = "black";
   } else {
-    body.style.backgroundColor = "gray";
+    body.style.backgroundColor = "black";
     body.style.color = "white";
   }
+
 }
