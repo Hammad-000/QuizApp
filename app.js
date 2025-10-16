@@ -38,14 +38,36 @@ form.addEventListener("submit", function (e) {
 
 
 function theme() {
-  const body = document.body;
-
-  if (body.style.backgroundColor === "black") {
-    body.style.backgroundColor = "white";
-    body.style.color = "black";
-  } else {
-    body.style.backgroundColor = "black";
-    body.style.color = "white";
-  }
-
+    const body = document.body;
+    const toggle = document.getElementById('toggle');
+    
+ 
+    if (toggle.checked) {
+        body.classList.add('dark-mode');
+    } else {
+        body.classList.remove('dark-mode');
+    }
 }
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('toggle');
+    const savedTheme = localStorage.getItem('theme');
+
+   
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        toggle.checked = true;
+    }
+
+    
+    toggle.addEventListener('change', () => {
+        if (toggle.checked) {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+});

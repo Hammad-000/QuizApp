@@ -1,62 +1,219 @@
-*{
-padding: 0;
-margin: 0;
-box-sizing: border-box;
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+/* General Styling */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-form{
-   
+body {
+    background-color: #c1c1c2;
+    padding-top: 40px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#result {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+button.theme {
+    
     display: flex;
-    flex-direction: column;
-    padding: 60px 60px;
-    gap: 50px;
-}
-
-.btn{
-     border: 1px solid rgb(145, 142, 144);
-        background-color: #a9a6a6;
-    width: 140px;
-    color: white;
-}
-
-.btn:hover{  
-  background-color: rgb(146, 149, 149);
-
-
-}
-.theme{padding: 8px;
-border-radius: 8px;}
-.mb-3{
-    
-    padding: 10px;
-    border: 1px solid rgb(145, 142, 144);
-    border-radius: 10px;
-}
-
-
-p{
-    position: relative;
-    font-size: 16px;
-}
-
-
-label:hover{
-
-    background-color: hwb(0 27% 73% / 0.721);
-}
-
-
-
-
-label{
-    
-    background-color: #a9a6a6;
-    transition: 0.4s;
-    cursor: pointer;
-    gap: 10px;
+    justify-self: self-end;
+    background-color: transparent;
+    color: #fff;
+    border: none;
     border-radius: 8px;
-    padding: 8px;
-    display: flex;
+    padding: 10px 0px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+/* 
+button.theme:hover {
+    background-color: #0056b3;
+} */
 
+.quiz-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.quiz-card:hover {
+    transform: scale(1.03);
+}
+
+.question-text {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+
+.options label {
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    background-color: #e0e3e6;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.options label:hover {
+    background-color: #e1e5e8;
+    transform: translateX(5px);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+}
+#quizForm{padding-bottom: 30px;}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+/* //=============================================================================== */
+
+/* Dark Mode */
+
+
+#theme-toggle-button {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    cursor: pointer;
+}
+
+
+#toggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+#container,
+#patches,
+#stars,
+#button,
+#sun,
+#moon,
+#cloud {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.25s;
+}
+
+
+#toggle:checked + svg #container {
+  fill: #2b4360;
+}
+
+
+#toggle:checked + svg #button {
+  transform: translate(28px, 2.333px);
+}
+
+
+#sun {
+  opacity: 1;
+}
+
+#toggle:checked + svg #sun {
+  opacity: 0;
+}
+
+#moon {
+  opacity: 0;
+}
+
+#toggle:checked + svg #moon {
+  opacity: 1;
+}
+
+
+#cloud {
+  opacity: 1;
+}
+
+#toggle:checked + svg #cloud {
+  opacity: 0;
+}
+
+#stars {
+  opacity: 0;
+}
+
+#toggle:checked + svg #stars {
+  opacity: 1;
+}
+
+/* //============================================= */
+
+
+
+body.dark-mode {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
+body.dark-mode .quiz-card {
+    background-color: #34495e;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .question-text {
+    color: #ecf0f1;
+}
+
+body.dark-mode .options label {
+    background-color: black;
+    color: #ecf0f1;
+}
+
+body.dark-mode .options label:hover {
+    background-color: #7f8c8d;
+}
+
+body.dark-mode .submit-btn {
+    background-color: #16a085;
+}
+
+body.dark-mode .submit-btn:hover {
+    background-color: #1abc9c;
+}
+
+@media (max-width: 576px) {
+    .quiz-card {
+        padding: 15px;
+    }
+
+    .submit-btn {
+        padding: 12px;
+        font-size: 16px;
+    }
 }
